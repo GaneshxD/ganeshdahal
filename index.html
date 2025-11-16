@@ -4,74 +4,124 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ganesh Dahal</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="image/logo_.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="main" style="margin-top:12px; display:flex; align-items:center; gap:12px;"></div>
-                <img src="image/logo_.png" alt="Profile Picture" class="profile-pic" />
-                <div>
-                    <h1>Ganesh Dahal</h1>
-                    <p>Portfolio</p>
+<body class="bg-zinc-50 text-zinc-900 font-sans">
+    <div class="min-h-screen px-6 py-10">
+        <div class="mx-auto max-w-4xl space-y-16">
+            <header class="space-y-8">
+                <nav class="flex items-center justify-between rounded-full border border-zinc-200 bg-white px-6 py-3 text-sm font-medium">
+                    <a href="#" class="flex items-center gap-3">
+                        <img src="image/logo_.png" alt="Ganesh Dahal logo" class="h-10 w-10 rounded-full object-cover" />
+                        <span class="text-sm font-semibold text-zinc-900">Ganesh Dahal</span>
+                    </a>
+                    <div class="flex items-center gap-6 text-zinc-500">
+                        <a href="#about" class="hover:text-zinc-900">About</a>
+                        <a href="#projects" class="hover:text-zinc-900">Projects</a>
+                        <a href="#contact" class="hover:text-zinc-900">Contact</a>
+                    </div>
+                </nav>
+                <div class="flex flex-col gap-6 rounded-3xl bg-white p-10 shadow-sm sm:flex-row sm:items-center">
+                    <img src="image/LogoM.png" alt="Portrait" class="h-40 w-40 rounded-full object-cover" />
+                    <div class="space-y-2">
+                        <p class="text-sm uppercase tracking-widest text-zinc-500">Product Designer</p>
+                        <h1 class="text-4xl font-semibold text-zinc-900">Ganesh Dahal</h1>
+                        <p class="text-lg text-zinc-600">Focused on calm interfaces that feel personal and precise.</p>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <main></main>
-            <section id="about" aria-labelledby="about-heading" style="margin-top:20px;">
-                <h2 id="about-head">About</h2>
-                <p>My name is Ganesh Dahal.</p>
-            </section>
+            <main class="space-y-16">
+                <section id="about" class="space-y-6">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-400">About</p>
+                        <h2 class="text-2xl font-semibold">Quiet craft, clear stories</h2>
+                    </div>
+                    <p class="text-lg text-zinc-600">I enjoy building simple layouts that put the work first. My process stays light: listen, sketch, test, refine. Every page is meant to feel effortless.</p>
+                </section>
 
-            <section id="projects" aria-labelledby="projects-heading" style="margin-top:18px;">
-                <h2 id="projects-head">Projects</h2>
-                <div class="projects"></div>
-                    <article class="project"></article>
-                        <img src="image/fff.png" alt="Project A screenshot" />
-                        <h3>Project A</h3>
-                        <p>Brief description of Project A.</p>
-                    </article>
+                <section id="projects" class="space-y-8">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-400">Projects</p>
+                        <h2 class="text-2xl font-semibold">Graphic Design</h2>
+                    </div>
 
-                    <article class="project"></article>
-                        <img src="image/Github.png" alt="Project B screenshot" />
-                        <h3>Project B</h3>
-                        <p>Brief description of Project B.</p>
-                    </article>
-                </div>
-            </section>
+                    <div class="grid items-stretch gap-6 md:grid-cols-2">
+                        <article class="flex h-full flex-col gap-4 rounded-3xl border border-zinc-200 bg-white p-6">
+                            <img src="image/fff.png" alt="Project A" class="aspect-[4/3] w-full rounded-2xl object-cover" />
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold">The Compass</h3>
+                                <p class="text-sm text-zinc-500">Event poster made with care</p>
+                            </div>
+                        </article>
 
-            <section id="contact" aria-labelledby="contact-heading" style="margin-top:18px;">
-                <h2 id="contact-head">Contact</h2>
-                <p class="contact">Email: <a href="mailto:ganeshdahal@gmail.com">ganeshdahal@gmail.com</a></p>
+                        <article class="flex h-full flex-col gap-4 rounded-3xl border border-zinc-200 bg-white p-6">
+                            <img src="image/Github.png" alt="Project B" class="aspect-[4/3] w-full rounded-2xl object-cover" />
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold">Github 101</h3>
+                                <p class="text-sm text-zinc-500">Event poster made with care</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="pt-8">
+                        <p class="text-xs uppercase tracking-widest text-zinc-400">Designs</p>
+                        <h2 class="text-2xl font-semibold">UI / UX — Case studies</h2>
+                    </div>
 
-                <form action="#" method="post" aria-label="Contact form">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" placeholder="Your name" required />
+                    <div class="grid items-stretch gap-6 md:grid-cols-2">
+                        <article class="flex h-full flex-col gap-4 rounded-3xl border border-zinc-200 bg-white p-6">
+                            <img src="image/ui1.jpeg" alt="Mobile Banking App" class="aspect-[4/3] w-full rounded-2xl object-cover" />
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold">Counter Strike 2 Marketplace</h3>
+                                <p class="text-sm text-zinc-500">Buy counter strike 2 skins here...</p>
+                            </div>
+                        </article>
 
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                        <article class="flex h-full flex-col gap-4 rounded-3xl border border-zinc-200 bg-white p-6">
+                            <img src="image/ui2.jpeg" alt="Analytics Dashboard" class="aspect-[4/3] w-full rounded-2xl object-cover" />
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-semibold">Game Ghar</h3>
+                                <p class="text-sm text-zinc-500">Find game deals and reviews</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
 
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                <section id="contact" class="space-y-8">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-400">Contact</p>
+                        <h2 class="text-2xl font-semibold">Say hello</h2>
+                    </div>
+                    <div class="space-y-6 rounded-3xl border border-zinc-200 bg-white p-8">
+                        <p class="text-sm text-zinc-500">Email <a href="mailto:ganeshdahal@gmail.com" class="text-zinc-900">ganeshdahal@gmail.com</a></p>
+                        <form action="#" method="post" class="space-y-4">
+                            <div class="space-y-2">
+                                <label for="name" class="text-sm font-medium">Name</label>
+                                <input id="name" name="name" type="text" placeholder="Your name" required class="w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3" />
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email" class="text-sm font-medium">Email</label>
+                                <input id="email" name="email" type="email" placeholder="you@example.com" required class="w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3" />
+                            </div>
+                            <div class="space-y-2">
+                                <label for="message" class="text-sm font-medium">Message</label>
+                                <textarea id="message" name="message" placeholder="Write your message" required class="h-32 w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3"></textarea>
+                            </div>
+                            <button type="submit" class="w-full rounded-2xl bg-zinc-900 py-3 text-sm font-semibold text-white">Send</button>
+                        </form>
+                    </div>
+                </section>
+            </main>
 
-                    <button type="submit">Send</button>
-                </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; <span id="year"></span> Ganesh Dahal</p>
-        </footer>
+            <footer class="flex items-center justify-between text-xs text-zinc-500">
+                <span>&copy; <span id="year"></span> Ganesh Dahal</span>
+                <span>Made with care</span>
+            </footer>
+        </div>
     </div>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
