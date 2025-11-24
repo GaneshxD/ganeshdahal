@@ -14,12 +14,13 @@
                 <nav class="flex items-center justify-between rounded-full border border-zinc-200 bg-white px-6 py-3 text-sm font-medium">
                     <a href="#" class="flex items-center gap-3">
                         <img src="image/logo_.png" alt="Ganesh Dahal logo" class="h-10 w-10 rounded-full object-cover" />
-                        <span class="text-sm font-semibold text-zinc-900">Ganesh Dahal</span>
+                        <span class="hidden sm:inline text-sm font-semibold text-zinc-900">Ganesh Dahal</span>
                     </a>
                     <div class="flex items-center gap-6 text-zinc-500">
                         <a href="#about" class="hover:text-zinc-900">About</a>
                         <a href="#projects" class="hover:text-zinc-900">Projects</a>
                         <a href="#contact" class="hover:text-zinc-900">Contact</a>
+                        <a href="#Task" class="hover:text-zinc-900">Task</a>
                     </div>
                 </nav>
                 <div class="flex flex-col gap-6 rounded-3xl bg-white p-10 shadow-sm sm:flex-row sm:items-center">
@@ -28,6 +29,15 @@
                         <p class="text-sm uppercase tracking-widest text-zinc-500">Product Designer</p>
                         <h1 class="text-4xl font-semibold text-zinc-900">Ganesh <span class="text-zinc-500">Dahal</span></h1>
                         <p class="text-lg text-zinc-600">Focused on calm interfaces that feel personal and precise.</p>
+                        <div class="mt-6 space-y-2">
+                                                    <div class="flex justify-between text-sm font-medium text-zinc-600">
+                                                        <span>Design</span>
+                                                        <span>90%</span>
+                                                    </div>
+                                                    <div class="h-2 w-full rounded-full bg-zinc-100">
+                                                        <div class="h-2 rounded-full bg-zinc-900" style="width: 90%"></div>
+                                                    </div>
+                                                </div>
                     </div>
                 </div>
             </header>
@@ -133,8 +143,8 @@
                         <h2 class="text-2xl font-semibold">Say hello</h2>
                     </div>
                     <div class="space-y-6 rounded-3xl border border-zinc-200 bg-white p-8">
-                        <p class="text-sm text-zinc-500">Email <a href="mailto:ganeshdahal@gmail.com" class="text-zinc-900">ganeshdahal@gmail.com</a></p>
-                        <form action="#" method="post" class="space-y-4">
+                        <p class="text-sm text-zinc-500"> <a href="mailto:ganeshdahal@gmail.com" class="text-zinc-900"></a></p>
+                        <form id="contactForm" action="#" method="post" class="space-y-4" novalidate>
                             <div class="space-y-2">
                                 <label for="name" class="text-sm font-medium">Name</label>
                                 <input id="name" name="name" type="text" placeholder="Your name" required class="w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3" />
@@ -147,20 +157,240 @@
                                 <label for="message" class="text-sm font-medium">Message</label>
                                 <textarea id="message" name="message" placeholder="Write your message" required class="h-32 w-full rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3"></textarea>
                             </div>
+                            <p id="formAlert" class="text-sm font-medium"></p>
                             <button type="submit" class="w-full rounded-2xl bg-zinc-900 py-3 text-sm font-semibold text-white">Send</button>
                         </form>
                     </div>
                 </section>
-            </main>
+                <section id="Task" class="space-y-8">
+                    <div class="mx-auto w-full max-w-2xl">
+                        <figure class="relative rounded-3xl bg-white shadow-sm overflow-hidden">
+                            <video id="heroVideo"src="image/gg (2).mp4"playsinline muted preload="metadata"
+                                class="w-full h-[360px] sm:h-[420px] md:h-[480px] object-cover bg-black">▶︎</video>
 
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <button
+                                    id="videoToggle"
+                                    aria-label="Play video"
+                                    class="pointer-events-auto rounded-full bg-white/95 text-zinc-900 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center shadow transition-transform hover:scale-105"
+                                >
+                                    ▶︎
+                                </button>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class=" flex justify-center">
+                        <canvas id="myCanvas" width="640" height="245" class="w-full max-w-full rounded-3xl border border-zinc-200 shadow-sm md:max-w-2xl"></canvas>
+                    </div>
+                </section>
+            </main>
             <footer class="flex items-center justify-between text-xs text-zinc-500">
                 <span>&copy; <span id="year"></span> Ganesh Dahal</span>
                 <span>Made with care</span>
             </footer>
         </div>
     </div>
+
+    <section>
+        <button
+            id="musicToggle"
+            aria-label="Play music"
+            style="position:fixed;right:20px;bottom:80px;width:44px;height:44px;border-radius:9999px;background:#1f2937;color:#fff;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.12);cursor:pointer;"
+        >
+            ♪
+        </button>
+        <button
+            id="backToTop"
+            aria-label="Back to top"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            style="position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:9999px;background:#111827;color:#fff;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.12);cursor:pointer;"
+        >
+            UP
+        </button>
+        <div class="fixed bottom-5 left-5 z-40 hidden w-56 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl sm:block">
+            <div class="relative h-36 w-full bg-zinc-100">
+                <img src="image/ui1.jpeg" alt="Gallery 1" class="gallery-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out" style="opacity: 1;">
+                <img src="image/ui2.jpeg" alt="Gallery 2" class="gallery-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out" style="opacity: 0;">
+                <img src="image/fff.png" alt="Gallery 3" class="gallery-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out" style="opacity: 0;">
+                
+                <button id="galPrev" class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1.5 text-zinc-900 shadow-sm hover:bg-white hover:scale-110 transition-all">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button id="galNext" class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-1.5 text-zinc-900 shadow-sm hover:bg-white hover:scale-110 transition-all">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+            <div class="bg-zinc-50 px-3 py-2 text-center">
+                <p class="text-[10px] font-bold uppercase tracking-wider text-zinc-400">Recent Work</p>
+            </div>
+        </div>
+
+         <div class="fixed bottom-5 right-20 z-40 hidden w-80 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl lg:block">
+                    <div class="bg-zinc-50 px-4 py-3 border-b border-zinc-100">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500">Flexbox vs Grid</h3>
+                    </div>
+                    <div class="p-4 text-xs text-zinc-600 space-y-3">
+                        <p><strong>Flexbox</strong> is one-dimensional (rows OR columns). It's best for aligning items in a single direction, like a navigation bar.</p>
+                        <p><strong>CSS Grid</strong> is two-dimensional (rows AND columns). It's best for complex layouts where you need to control items on both axes simultaneously.</p>
+                        <div class="pt-2 border-t border-zinc-100">
+                            <p class="font-semibold text-zinc-900 mb-2">Demo: Grid Layout (Skills)</p>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-zinc-100 rounded p-2 text-center font-medium text-zinc-700">HTML</div>
+                                <div class="bg-zinc-100 rounded p-2 text-center font-medium text-zinc-700">CSS</div>
+                                <div class="bg-zinc-100 rounded p-2 text-center font-medium text-zinc-700">JS</div>
+                                <div class="bg-zinc-100 rounded p-2 text-center font-medium text-zinc-700">Figma</div>
+                                <div class="bg-zinc-100 rounded p-2 text-center font-medium text-zinc-700">React</div>
+                                <div class="bg-zinc-100 rounded p-2 text-center font-medium text-zinc-700">Node</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </section>
+
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        const form = document.getElementById("contactForm");
+        const alertBox = document.getElementById("formAlert");
+        const musicBtn = document.getElementById("musicToggle");
+        const musicTrack = new Audio("image/music.m4a");
+        musicTrack.loop = true;
+        musicTrack.preload = "auto";
+
+        form?.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const data = {
+                name: form.name.value.trim(),
+                email: form.email.value.trim(),
+                message: form.message.value.trim()
+            };
+
+            const emailOk = /.+@.+\..+/.test(data.email);
+
+            if (!data.name || !emailOk || data.message.length < 5) {
+                alertBox.textContent = "Please fill all fields with valid details.";
+                alertBox.className = "text-sm font-medium text-red-600";
+                return;
+            }
+
+            localStorage.setItem("contactData", JSON.stringify(data));
+            alertBox.textContent = "Details saved. Taking you to the summary...";
+            alertBox.className = "text-sm font-medium text-emerald-600";
+            setTimeout(() => {
+                window.location.href = "form-details.html";
+            }, 400);
+        });
+
+        musicBtn?.addEventListener("click", () => {
+            if (musicTrack.paused) {
+                musicTrack.play().then(() => {
+                    musicBtn.textContent = "❚❚";
+                }).catch((error) => {
+                    console.error(error);
+                });
+            } else {
+                musicTrack.pause();
+                musicTrack.currentTime = 0;
+                musicBtn.textContent = "♪";
+            }
+        });
+
+        (function () {
+            const v = document.getElementById("heroVideo");
+            const btn = document.getElementById("videoToggle");
+            if (!v || !btn) return;
+
+            btn.addEventListener("click", () => {
+                if (v.paused) {
+                    v.play().catch(() => {});
+                    btn.textContent = "❚❚";
+                    btn.setAttribute("aria-label", "Pause video");
+                } else {
+                    v.pause();
+                    btn.textContent = "▶︎";
+                    btn.setAttribute("aria-label", "Play video");
+                }
+            });
+
+            v.addEventListener("play", () => btn.classList.add("opacity-70"));
+            v.addEventListener("pause", () => btn.classList.remove("opacity-70"));
+        })();
+        (function () {
+            const canvas = document.getElementById("myCanvas");
+            if (!canvas) return;
+            
+            // Hide canvas on mobile devices
+            if (window.innerWidth < 768) {
+            canvas.style.display = 'none';
+            return;
+            }
+            
+            const ctx = canvas.getContext("2d");
+
+            function draw() {
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * window.devicePixelRatio;
+            canvas.height = rect.height * window.devicePixelRatio;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+            const width = rect.width;
+            const height = rect.height;
+
+            ctx.fillStyle = "#f3f4f6";
+            ctx.fillRect(0, 0, width, height);
+
+            const titleSize = 48;
+            const subtitleSize = 24;
+
+            ctx.textAlign = "center";
+
+            ctx.fillStyle = "#111827";
+            ctx.font = `bold ${titleSize}px sans-serif`;
+            ctx.fillText("Hey", width / 2, height * 0.45);
+
+            ctx.fillStyle = "#6b7280"; 
+            ctx.font = `${subtitleSize}px sans-serif`;
+            ctx.fillText("Welcome to my portfolio.", width / 2, height * 0.7);
+            }
+
+            window.addEventListener('resize', () => {
+            if (window.innerWidth < 768) {
+                canvas.style.display = 'none';
+            } else {
+                canvas.style.display = 'block';
+                draw();
+            }
+            });
+            
+            draw();
+        })();
+
+        (function() {
+            const slides = document.querySelectorAll('.gallery-slide');
+            const next = document.getElementById('galNext');
+            const prev = document.getElementById('galPrev');
+            let active = 0;
+
+            if (!slides.length) return;
+
+            const update = () => {
+                slides.forEach((slide, i) => {
+                    slide.style.opacity = i === active ? '1' : '0';
+                });
+            };
+
+            next?.addEventListener('click', () => {
+                active = (active + 1) % slides.length;
+                update();
+            });
+
+            prev?.addEventListener('click', () => {
+                active = (active - 1 + slides.length) % slides.length;
+                update();
+            });
+        })();
+
     </script>
 </body>
 </html>
